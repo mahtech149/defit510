@@ -1,0 +1,52 @@
+Documentation du Projet Klub Logo
+===================================
+
+Description
+-----------
+Ce projet est une application React conçue pour afficher une animation moderne de logos pour le projet "Klub". L'application fait défiler 4 logos différents en boucle avec des effets de transition fluides (apparition, agrandissement, arrière-plan dynamique).
+
+Prérequis
+---------
+- Node.js installé sur votre machine.
+- npm (Node Package Manager).
+
+Installation
+------------
+1. Ouvrez un terminal dans le dossier du projet.
+2. Installez les dépendances nécessaires avec la commande suivante :
+   npm install
+
+Lancement de l'application
+--------------------------
+Pour lancer le projet en mode développement :
+   npm start
+
+L'application sera accessible à l'adresse http://localhost:3000 dans votre navigateur.
+
+Structure du Projet
+-------------------
+- src/AnimatedLogo.js : Le composant principal qui gère la logique de l'animation et l'affichage des logos.
+- src/App.js : Le point d'entrée de l'application qui inclut le composant AnimatedLogo.
+- src/images/ : Dossier contenant les fichiers images des logos.
+
+Fonctionnement de l'Animation (AnimatedLogo.js)
+-----------------------------------------------
+Le composant `AnimatedLogo` utilise la bibliothèque `framer-motion` pour les animations.
+- Cycle de logos : Les logos changent toutes les 5 secondes.
+- Effets :
+  - Cercles d'arrière-plan : Apparaissent en s'agrandissant (scale) et en devenant opaques.
+  - Logo : Apparaît avec un léger délai (0.2s) après l'arrière-plan.
+- Configuration :
+  - `DURATION` : Durée de l'animation (1 seconde).
+  - `LOGO_DELAY` : Délai d'apparition du logo.
+
+Personnalisation
+----------------
+Pour modifier les logos :
+1. Ajoutez vos nouvelles images dans le dossier `src/images/`.
+2. Mettez à jour les imports dans `src/AnimatedLogo.js` :
+   import monNouveauLogo from './images/mon-logo.png';
+3. Ajoutez la variable importée dans le tableau `logos`.
+
+Pour modifier les couleurs de l'arrière-plan :
+- Modifiez le tableau `bgColors` dans `src/AnimatedLogo.js` avec vos codes couleurs (hexadécimal ou rgba).
